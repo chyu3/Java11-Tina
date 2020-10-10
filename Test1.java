@@ -1,5 +1,5 @@
 /*
- * Test1.java
+ * SquaredAndPowers.java
  * 
  * Copyright 2020 Tina Chen <ChenTina@10-72-120-211.wifi.8.s.pas.ofs.edu.sg>
  * 
@@ -22,54 +22,58 @@
  */
 
 
-public class Test1Correction {
+public class Test1 
+{
 	
-	public static void main (String[] args) {
-		System.out.println("Tina");
-		int s = 0;
-		int p = 1;
-		int number = IBIO.inputInt("Enter a numer less than 10: ");
+	public static void main (String[] args) 
+	{
+		int power;
+		int base;
+		int number;
 		
-		while (number >= 10 || number<1)
+		IBIO.output("Tina");
+		do
 		{
-			System.out.println(">>>Error-invlaid input");
-			number = IBIO.inputInt("Enter a number less than 10: ");
+			number = 4;
+			base = IBIO.inputInt("Enter a number: 4");		
+			{
+				System.out.println("1");
+				System.out.println("2");
+				System.out.println("3");
+				System.out.println("4");
+			}
+			
+			power = 2;
+			base = IBIO.inputInt("Enter a base: ");
+			if (base = 1) //squares
+			{
+				IBIO.out("1");
+			}
+			else if (base = 2)
+			{
+				IBIO.out("4");
+			}
+			else if (base = 3)
+			{
+				IBIO.out("9");
+			}
+			else if(base = 4)
+			{
+				IBIO.out("16");
+			}
+			else if (number >= 10)
+			{
+				IBIO.output("Enter a number less than 10: 11");
+				IBIO.output(">>>Error-invalid input");
+			}
+			else if (number 1 >  && number <= 10)
+			{
+				IBIO.output("Enter a positive number less than 10: 0");
+				IBIO.output(">>>Error-invalid input");
+			}
 		}
-		for (int i = 1 ; i <= number; i++)
-		{
-			s = i*i;
-			if (s >= 10)
-			{
-				System.out.print(i + "  ");
-			}
-			else 
-			{
-				System.out.print(i + "  ");
-			}
-			p = p * number;
-			System.out.print(s + "  "); 
-			int c = 0;
-			int k = 0;
-			int t = 0;
-			while (c != 1)
-			{
-				if (p/k >= 1)
-				{
-					t++;
-				}
-				else 
-				{
-					c++;
-				}
-				k = k * 10;
-			}
-			int space = 10 - t;
-			for ( int j = 1 ; j <= space ; j++ )
-			{
-				System.out.print(" ");
-			}
-			System.out.println(p);
-		}	
+		
+		System.exit(0);
 	}
 }
 
