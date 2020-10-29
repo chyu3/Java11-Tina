@@ -37,3 +37,11 @@ public class Chapter3Prime {
 	}
 }
 
+/* 
+ * 
+ * Input 7
+ * output: 7 is divisible by 7
+ * 
+ * Input 9
+ * output: 9 is divisible by 3
+ */
