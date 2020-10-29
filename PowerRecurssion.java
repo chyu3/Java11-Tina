@@ -44,13 +44,24 @@ public class PowerRecurssion {
 		}
 	}
 	
-	Static double superPower(int base, int expo)
+	static double superPower(int base, int expo)
 	{
 		if (base == 1)
 		{
 			return 1;
 		}
-				
+		else if (expo == 0)
+		{
+			return 1;
+		}
+		else if (expo == 1)
+		{
+			return base;
+		}
+		else
+		{
+			return base * power(base, expo-1);
+		}		
 		
 	}
 }
