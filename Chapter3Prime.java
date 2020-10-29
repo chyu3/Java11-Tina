@@ -22,30 +22,31 @@
  */
 
 
-public class Chapter3Prime {
+public class Chapter3Prime 
+{
 	
-	public static void main (String[] args) {
-		int divisor = 1;
+	public static void main (String[] args) 
+	{
+		int divisor = 0;
 		int number = IBIO.inputInt("Enter a number: ");
 		
 		do
 		{
+			divisor++;
 			if (number % divisor == 0)
 			{
 				System.out.println(divisor);
 			}
-			divisor++;
 		}
 		while (divisor != number);
-	    System.out.println(number + " " + "is divisible by" + "" + divisor);
 	}
 }
 
 /* 
  * 
  * Input 7
- * output: 7 is divisible by 7
+ * output: 1, 7
  * 
  * Input 9
- * output: 9 is divisible by 3
+ * output: 1, 3, 9
  */
