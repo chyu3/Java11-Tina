@@ -30,9 +30,13 @@ public class Chapter3Prime {
 		
 		do
 		{
+			if (number % divisor == 0)
+			{
+				System.out.println(divisor);
+			}
 			divisor++;
 		}
-		while (number % divisor != 0);
+		while (divisor != number);
 	    System.out.println(number + " " + "is divisible by" + "" + divisor);
 	}
 }
