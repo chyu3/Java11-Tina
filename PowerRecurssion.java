@@ -72,11 +72,11 @@ public class PowerRecurssion
 	
 	public static void main (String[]args)
 	{
-		System.out.println(power(2, 10));
-		System.out.println(power(0, 0));
-		System.out.println(power(1, 100));
-		System.out.println(power(99, 1));
-		System.out.println(superPower(2, -2));
+		System.out.println( power(2, 10));
+		System.out.println( power(0, 0));
+		System.out.println( power(1, 100));
+		System.out.println( power(99, 1));
+		System.out.println( superPower(2, -2));
 	}
 }
 
