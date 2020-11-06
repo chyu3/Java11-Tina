@@ -26,6 +26,21 @@ public class Mock02 {
 	
 	public static void main (String[] args) {
 		System.out.println("Tina");
+		int first = IBIO.inputInt("How many numbers to process? ");
+		
+		while (first < 5)
+		{
+			first = IBIO.inputInt("ERROR-enter a number < 5: ");
+		}
+		
+		int second = 0;
+		do
+		{
+			second = IBIO.inputInt("How many numbers to process? ");
+			if(second < 5)
+			System.out.println("ERROR-enter a number < 5: ");
+		}
+		while (second < 5);
 		
 		
 	}
