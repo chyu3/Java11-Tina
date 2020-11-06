@@ -22,9 +22,11 @@
  */
 
 
-public class Mock02 {
+public class Mock02 
+{
 	
-	public static void main (String[] args) {
+	public static void main (String[] args) 
+	{
 		System.out.println("Tina");
 		int first = IBIO.inputInt("How many numbers to process? ");
 		
@@ -33,7 +35,7 @@ public class Mock02 {
 			first = IBIO.inputInt("ERROR-enter a number < 5: ");
 		}
 		
-		int second = 0;
+		int second = 1;
 		do
 		{
 			second = IBIO.inputInt("How many numbers to process? ");
@@ -42,7 +44,13 @@ public class Mock02 {
 		}
 		while (second < 5);
 		
+		int min=0, max=0, freq=0;
+		double sum=0;
 		
+		for (int i = 0; i < second; i++)
+		{
+			int u = IBIO.inputInt("How many numbers to process?");
+		}
 	}
 }
 
