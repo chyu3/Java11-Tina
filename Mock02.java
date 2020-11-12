@@ -49,8 +49,39 @@ public class Mock02
 		
 		for (int i = 0; i < second; i++)
 		{
-			int u = IBIO.inputInt("How many numbers to process?");
+			int u = IBIO.inputInt("Enter a number: ");
+			// use first number as baseline
+			if (i == 0)
+			{
+				min = u;
+				max = u;
+			}
+			else
+			{
+				if(u < min)
+				    min = u;
+				if(u > max)
+				    max = u;
+			}
+			//check prime
+			int divisor = 1;
+			do
+			{
+				divisor++;
+			}
+			while(u % divisor != 0);
+			//count when prime
+			if (u==divisor)
+				freq++;
+				
+			sum = sum + u;
 		}
+		
+		System.out.println("Minimum = " + min);
+		System.out.println("Maximum = " + max);
+		
+		System.out.println("Average = " + sum/first);
+		System.out.println("Prime frequency = " + freq);
 	}
 }
 
