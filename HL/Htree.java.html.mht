@@ -1,0 +1,312 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: https://introcs.cs.princeton.edu/java/23recursion/Htree.java.html
+Subject: Htree.java
+Date: Sat, 14 Nov 2020 05:26:31 -0000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--cLWbyehWTZwKr8SXHuGqsY35CGWsMulv3wWDFbtICv----"
+
+
+------MultipartBoundary--cLWbyehWTZwKr8SXHuGqsY35CGWsMulv3wWDFbtICv----
+Content-Type: text/html
+Content-ID: <frame-A217EC9784910938A987D7C7933CAAAA@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://introcs.cs.princeton.edu/java/23recursion/Htree.java.html
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"><html lang=
+=3D"en"><head><meta http-equiv=3D"Content-Type" content=3D"text/html; chars=
+et=3DUTF-8">
+
+<link rel=3D"shortcut icon" href=3D"https://introcs.cs.princeton.edu/favico=
+n.ico">
+<link rel=3D"stylesheet" href=3D"https://introcs.cs.princeton.edu/java.css"=
+ type=3D"text/css">
+
+<title>Htree.java</title>
+
+
+<meta name=3D"AUTHOR" content=3D"Robert Sedgewick and Kevin Wayne">
+<meta name=3D"DESCRIPTION" content=3D"Htree code in Java">
+<meta name=3D"TITLE" content=3D"Htree code in Java">
+<meta name=3D"KEYWORDS" content=3D"Htree,java,programming,computer science,=
+algorithm,program,code">
+<meta name=3D"ROBOTS" content=3D"INDEX,FOLLOW">
+
+</head>
+
+
+<body>
+<center><h1>Htree.java</h1></center><p><br>
+
+Below is the syntax highlighted version of <a href=3D"https://introcs.cs.pr=
+inceton.edu/java/23recursion/Htree.java">Htree.java</a>
+from <a href=3D"https://introcs.cs.princeton.edu/java/23recursion">=C2=A72.=
+3 Recursion</a>.
+</p><p><br>
+
+<!-- Generator: GNU source-highlight 3.1.6
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+</p><pre><tt><span class=3D"comment">/*************************************=
+*****************************************</span>
+<span class=3D"comment"> *  Compilation:  javac Htree.java</span>
+<span class=3D"comment"> *  Execution:    java Htree n</span>
+<span class=3D"comment"> *  Dependencies: StdDraw.java</span>
+<span class=3D"comment"> *</span>
+<span class=3D"comment"> *  Plot an order n H-tree.</span>
+<span class=3D"comment"> *</span>
+<span class=3D"comment"> *  % java Htree 5</span>
+<span class=3D"comment"> *</span>
+<span class=3D"comment"> **************************************************=
+****************************/</span>
+
+<span class=3D"keyword">public</span><span class=3D"normal"> </span><span c=
+lass=3D"keyword">class</span><span class=3D"normal"> </span><span class=3D"=
+classname">Htree</span><span class=3D"normal"> </span><span class=3D"cbrack=
+et">{</span>
+
+<span class=3D"normal">    </span><span class=3D"comment">// plot an H, cen=
+tered on (x, y) of the given side length</span>
+<span class=3D"normal">    </span><span class=3D"keyword">public</span><spa=
+n class=3D"normal"> </span><span class=3D"keyword">static</span><span class=
+=3D"normal"> </span><span class=3D"type">void</span><span class=3D"normal">=
+ </span><span class=3D"function">drawH</span><span class=3D"symbol">(</span=
+><span class=3D"type">double</span><span class=3D"normal"> x</span><span cl=
+ass=3D"symbol">,</span><span class=3D"normal"> </span><span class=3D"type">=
+double</span><span class=3D"normal"> y</span><span class=3D"symbol">,</span=
+><span class=3D"normal"> </span><span class=3D"type">double</span><span cla=
+ss=3D"normal"> size</span><span class=3D"symbol">)</span><span class=3D"nor=
+mal"> </span><span class=3D"cbracket">{</span>
+
+<span class=3D"normal">        </span><span class=3D"comment">// compute th=
+e coordinates of the 4 tips of the H</span>
+<span class=3D"normal">        </span><span class=3D"type">double</span><sp=
+an class=3D"normal"> x0 </span><span class=3D"symbol">=3D</span><span class=
+=3D"normal"> x </span><span class=3D"symbol">-</span><span class=3D"normal"=
+> size</span><span class=3D"symbol">/</span><span class=3D"number">2</span>=
+<span class=3D"symbol">;</span>
+<span class=3D"normal">        </span><span class=3D"type">double</span><sp=
+an class=3D"normal"> x1 </span><span class=3D"symbol">=3D</span><span class=
+=3D"normal"> x </span><span class=3D"symbol">+</span><span class=3D"normal"=
+> size</span><span class=3D"symbol">/</span><span class=3D"number">2</span>=
+<span class=3D"symbol">;</span>
+<span class=3D"normal">        </span><span class=3D"type">double</span><sp=
+an class=3D"normal"> y0 </span><span class=3D"symbol">=3D</span><span class=
+=3D"normal"> y </span><span class=3D"symbol">-</span><span class=3D"normal"=
+> size</span><span class=3D"symbol">/</span><span class=3D"number">2</span>=
+<span class=3D"symbol">;</span>
+<span class=3D"normal">        </span><span class=3D"type">double</span><sp=
+an class=3D"normal"> y1 </span><span class=3D"symbol">=3D</span><span class=
+=3D"normal"> y </span><span class=3D"symbol">+</span><span class=3D"normal"=
+> size</span><span class=3D"symbol">/</span><span class=3D"number">2</span>=
+<span class=3D"symbol">;</span>
+
+<span class=3D"normal">        </span><span class=3D"comment">// draw the 3=
+ line segments of the H</span>
+<span class=3D"normal">        StdDraw</span><span class=3D"symbol">.</span=
+><span class=3D"function">line</span><span class=3D"symbol">(</span><span c=
+lass=3D"normal">x0</span><span class=3D"symbol">,</span><span class=3D"norm=
+al"> y0</span><span class=3D"symbol">,</span><span class=3D"normal"> x0</sp=
+an><span class=3D"symbol">,</span><span class=3D"normal"> y1</span><span cl=
+ass=3D"symbol">);</span><span class=3D"normal">    </span><span class=3D"co=
+mment">// left  vertical segment of the H</span>
+<span class=3D"normal">        StdDraw</span><span class=3D"symbol">.</span=
+><span class=3D"function">line</span><span class=3D"symbol">(</span><span c=
+lass=3D"normal">x1</span><span class=3D"symbol">,</span><span class=3D"norm=
+al"> y0</span><span class=3D"symbol">,</span><span class=3D"normal"> x1</sp=
+an><span class=3D"symbol">,</span><span class=3D"normal"> y1</span><span cl=
+ass=3D"symbol">);</span><span class=3D"normal">    </span><span class=3D"co=
+mment">// right vertical segment of the H</span>
+<span class=3D"normal">        StdDraw</span><span class=3D"symbol">.</span=
+><span class=3D"function">line</span><span class=3D"symbol">(</span><span c=
+lass=3D"normal">x0</span><span class=3D"symbol">,</span><span class=3D"norm=
+al">  y</span><span class=3D"symbol">,</span><span class=3D"normal"> x1</sp=
+an><span class=3D"symbol">,</span><span class=3D"normal">  y</span><span cl=
+ass=3D"symbol">);</span><span class=3D"normal">    </span><span class=3D"co=
+mment">// connect the two vertical segments of the H</span>
+<span class=3D"normal">    </span><span class=3D"cbracket">}</span>
+
+<span class=3D"normal">    </span><span class=3D"comment">// plot an order =
+n H-tree, centered on (x, y) of the given side length</span>
+<span class=3D"normal">    </span><span class=3D"keyword">public</span><spa=
+n class=3D"normal"> </span><span class=3D"keyword">static</span><span class=
+=3D"normal"> </span><span class=3D"type">void</span><span class=3D"normal">=
+ </span><span class=3D"function">draw</span><span class=3D"symbol">(</span>=
+<span class=3D"type">int</span><span class=3D"normal"> n</span><span class=
+=3D"symbol">,</span><span class=3D"normal"> </span><span class=3D"type">dou=
+ble</span><span class=3D"normal"> x</span><span class=3D"symbol">,</span><s=
+pan class=3D"normal"> </span><span class=3D"type">double</span><span class=
+=3D"normal"> y</span><span class=3D"symbol">,</span><span class=3D"normal">=
+ </span><span class=3D"type">double</span><span class=3D"normal"> size</spa=
+n><span class=3D"symbol">)</span><span class=3D"normal"> </span><span class=
+=3D"cbracket">{</span>
+<span class=3D"normal">        </span><span class=3D"keyword">if</span><spa=
+n class=3D"normal"> </span><span class=3D"symbol">(</span><span class=3D"no=
+rmal">n </span><span class=3D"symbol">=3D=3D</span><span class=3D"normal"> =
+</span><span class=3D"number">0</span><span class=3D"symbol">)</span><span =
+class=3D"normal"> </span><span class=3D"keyword">return</span><span class=
+=3D"symbol">;</span>
+<span class=3D"normal">        </span><span class=3D"function">drawH</span>=
+<span class=3D"symbol">(</span><span class=3D"normal">x</span><span class=
+=3D"symbol">,</span><span class=3D"normal"> y</span><span class=3D"symbol">=
+,</span><span class=3D"normal"> size</span><span class=3D"symbol">);</span>
+
+<span class=3D"normal">        </span><span class=3D"comment">// compute x-=
+ and y-coordinates of the 4 half-size H-trees</span>
+<span class=3D"normal">        </span><span class=3D"type">double</span><sp=
+an class=3D"normal"> x0 </span><span class=3D"symbol">=3D</span><span class=
+=3D"normal"> x </span><span class=3D"symbol">-</span><span class=3D"normal"=
+> size</span><span class=3D"symbol">/</span><span class=3D"number">2</span>=
+<span class=3D"symbol">;</span>
+<span class=3D"normal">        </span><span class=3D"type">double</span><sp=
+an class=3D"normal"> x1 </span><span class=3D"symbol">=3D</span><span class=
+=3D"normal"> x </span><span class=3D"symbol">+</span><span class=3D"normal"=
+> size</span><span class=3D"symbol">/</span><span class=3D"number">2</span>=
+<span class=3D"symbol">;</span>
+<span class=3D"normal">        </span><span class=3D"type">double</span><sp=
+an class=3D"normal"> y0 </span><span class=3D"symbol">=3D</span><span class=
+=3D"normal"> y </span><span class=3D"symbol">-</span><span class=3D"normal"=
+> size</span><span class=3D"symbol">/</span><span class=3D"number">2</span>=
+<span class=3D"symbol">;</span>
+<span class=3D"normal">        </span><span class=3D"type">double</span><sp=
+an class=3D"normal"> y1 </span><span class=3D"symbol">=3D</span><span class=
+=3D"normal"> y </span><span class=3D"symbol">+</span><span class=3D"normal"=
+> size</span><span class=3D"symbol">/</span><span class=3D"number">2</span>=
+<span class=3D"symbol">;</span>
+
+<span class=3D"normal">        </span><span class=3D"comment">// recursivel=
+y draw 4 half-size H-trees of order n-1</span>
+<span class=3D"normal">        </span><span class=3D"function">draw</span><=
+span class=3D"symbol">(</span><span class=3D"normal">n</span><span class=3D=
+"symbol">-</span><span class=3D"number">1</span><span class=3D"symbol">,</s=
+pan><span class=3D"normal"> x0</span><span class=3D"symbol">,</span><span c=
+lass=3D"normal"> y0</span><span class=3D"symbol">,</span><span class=3D"nor=
+mal"> size</span><span class=3D"symbol">/</span><span class=3D"number">2</s=
+pan><span class=3D"symbol">);</span><span class=3D"normal">    </span><span=
+ class=3D"comment">// lower left  H-tree</span>
+<span class=3D"normal">        </span><span class=3D"function">draw</span><=
+span class=3D"symbol">(</span><span class=3D"normal">n</span><span class=3D=
+"symbol">-</span><span class=3D"number">1</span><span class=3D"symbol">,</s=
+pan><span class=3D"normal"> x0</span><span class=3D"symbol">,</span><span c=
+lass=3D"normal"> y1</span><span class=3D"symbol">,</span><span class=3D"nor=
+mal"> size</span><span class=3D"symbol">/</span><span class=3D"number">2</s=
+pan><span class=3D"symbol">);</span><span class=3D"normal">    </span><span=
+ class=3D"comment">// upper left  H-tree</span>
+<span class=3D"normal">        </span><span class=3D"function">draw</span><=
+span class=3D"symbol">(</span><span class=3D"normal">n</span><span class=3D=
+"symbol">-</span><span class=3D"number">1</span><span class=3D"symbol">,</s=
+pan><span class=3D"normal"> x1</span><span class=3D"symbol">,</span><span c=
+lass=3D"normal"> y0</span><span class=3D"symbol">,</span><span class=3D"nor=
+mal"> size</span><span class=3D"symbol">/</span><span class=3D"number">2</s=
+pan><span class=3D"symbol">);</span><span class=3D"normal">    </span><span=
+ class=3D"comment">// lower right H-tree</span>
+<span class=3D"normal">        </span><span class=3D"function">draw</span><=
+span class=3D"symbol">(</span><span class=3D"normal">n</span><span class=3D=
+"symbol">-</span><span class=3D"number">1</span><span class=3D"symbol">,</s=
+pan><span class=3D"normal"> x1</span><span class=3D"symbol">,</span><span c=
+lass=3D"normal"> y1</span><span class=3D"symbol">,</span><span class=3D"nor=
+mal"> size</span><span class=3D"symbol">/</span><span class=3D"number">2</s=
+pan><span class=3D"symbol">);</span><span class=3D"normal">    </span><span=
+ class=3D"comment">// upper right H-tree</span>
+<span class=3D"normal">    </span><span class=3D"cbracket">}</span>
+
+<span class=3D"normal">    </span><span class=3D"comment">// reads an integ=
+er command-line argument n and plots an order n H-tree</span>
+<span class=3D"normal">    </span><span class=3D"keyword">public</span><spa=
+n class=3D"normal"> </span><span class=3D"keyword">static</span><span class=
+=3D"normal"> </span><span class=3D"type">void</span><span class=3D"normal">=
+ </span><span class=3D"function">main</span><span class=3D"symbol">(</span>=
+<span class=3D"normal">String</span><span class=3D"symbol">[]</span><span c=
+lass=3D"normal"> args</span><span class=3D"symbol">)</span><span class=3D"n=
+ormal"> </span><span class=3D"cbracket">{</span>
+<span class=3D"normal">        </span><span class=3D"type">int</span><span =
+class=3D"normal"> n </span><span class=3D"symbol">=3D</span><span class=3D"=
+normal"> Integer</span><span class=3D"symbol">.</span><span class=3D"functi=
+on">parseInt</span><span class=3D"symbol">(</span><span class=3D"normal">ar=
+gs</span><span class=3D"symbol">[</span><span class=3D"number">0</span><spa=
+n class=3D"symbol">]);</span>
+
+<span class=3D"normal">        </span><span class=3D"type">double</span><sp=
+an class=3D"normal"> x </span><span class=3D"symbol">=3D</span><span class=
+=3D"normal"> </span><span class=3D"number">0.5</span><span class=3D"symbol"=
+>,</span><span class=3D"normal"> y </span><span class=3D"symbol">=3D</span>=
+<span class=3D"normal"> </span><span class=3D"number">0.5</span><span class=
+=3D"symbol">;</span><span class=3D"normal">   </span><span class=3D"comment=
+">// center of H-tree</span>
+<span class=3D"normal">        </span><span class=3D"type">double</span><sp=
+an class=3D"normal"> size </span><span class=3D"symbol">=3D</span><span cla=
+ss=3D"normal"> </span><span class=3D"number">0.5</span><span class=3D"symbo=
+l">;</span><span class=3D"normal">         </span><span class=3D"comment">/=
+/ side length of H-tree</span>
+<span class=3D"normal">        </span><span class=3D"function">draw</span><=
+span class=3D"symbol">(</span><span class=3D"normal">n</span><span class=3D=
+"symbol">,</span><span class=3D"normal"> x</span><span class=3D"symbol">,</=
+span><span class=3D"normal"> y</span><span class=3D"symbol">,</span><span c=
+lass=3D"normal"> size</span><span class=3D"symbol">);</span>
+<span class=3D"normal">    </span><span class=3D"cbracket">}</span>
+<span class=3D"cbracket">}</span>
+</tt></pre>
+
+
+
+
+
+
+<p><br></p><address><small>
+Copyright =C2=A9 2000=E2=80=932017, Robert Sedgewick and Kevin Wayne.
+<br>Last updated: Fri Oct 20 14:12:12 EDT 2017.
+</small></address>
+
+
+</body></html>
+------MultipartBoundary--cLWbyehWTZwKr8SXHuGqsY35CGWsMulv3wWDFbtICv----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://introcs.cs.princeton.edu/java.css
+
+@charset "utf-8";
+
+a { text-decoration: none; }
+
+a:link { color: rgb(0, 102, 204); }
+
+a:hover { color: red; text-decoration: underline; }
+
+body { color: rgb(0, 0, 15); background-color: white; }
+
+.keyword { color: rgb(0, 102, 204); }
+
+.type { color: rgb(0, 102, 204); font-family: monospace; }
+
+.string { color: rgb(17, 102, 17); }
+
+.specialchar { color: pink; }
+
+.comment { color: rgb(102, 102, 102); font-style: italic; }
+
+.number { color: purple; }
+
+.preproc { color: darkblue; font-weight: bold; }
+
+.symbol { color: darkred; }
+
+.function { color: rgb(0, 0, 15); font-weight: bold; }
+
+.cbracket { color: rgb(0, 0, 15); }
+
+.todo { font-weight: bold; }
+
+a { text-decoration: none; }
+
+a:link { text-decoration: none; }
+
+a:visited { text-decoration: none; }
+
+a:hover { color: red; text-decoration: underline; }
+
+a:active { color: black; }
+
+h1 { color: black; }
+------MultipartBoundary--cLWbyehWTZwKr8SXHuGqsY35CGWsMulv3wWDFbtICv------
