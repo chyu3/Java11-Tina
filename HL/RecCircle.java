@@ -43,6 +43,11 @@ public class RecCircle
 	 */
 	public static void circlers(double radius)	// shrinking circle
 	{
+		if ( radius > 50)
+		return;
+		else
+		circlere (radius + 1);
+		
 		// your code here
 	}
 
@@ -65,7 +70,7 @@ public class RecCircle
 		in.close();
 		*/
 		// Expanding/growing concentric circles (comment/uncomment to test)
-		StdDraw.setPenColor(StdDraw.BLUE);
+		StdDraw.setPenColor(StdDraw.PINK);
 		circlere( 25 );
 
 		StdDraw.pause(3000);
