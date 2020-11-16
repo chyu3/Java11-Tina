@@ -27,12 +27,21 @@ public class PractiseChallenge {
 	public static void main (String[] args) {
 		System.out.println("Tina");
 		int number = IBIO.inputInt("Enter an integer between 1 and 9: ");
-		while (number<1 && number>9)
+		while (number<1 || number>9)
 		{
-			IBIO.output("Error-number out of range");
+			IBIO.output("Error-number out of range");  
+			
 		}
 		
-		System.exit(0);
+		int sequence = 1;
+		int answer = number * sequence;
+		
+		while (sequence<=20)
+		{
+			System.out.println(number + " " + "X" + " " + sequence + " " + "=" + " " + answer);
+			sequence++;
+		}
+		
 	}
 }
 
