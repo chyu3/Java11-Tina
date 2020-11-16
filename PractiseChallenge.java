@@ -27,7 +27,7 @@ public class PractiseChallenge {
 	public static void main (String[] args) {
 		System.out.println("Tina");
 		int number = IBIO.inputInt("Enter an integer between 1 and 9: ");
-		if (number<1 && number>9)
+		while (number<1 && number>9)
 		{
 			IBIO.output("Error-number out of range");
 		}
