@@ -32,6 +32,39 @@ public class Programming2 {
 			IBIO.inputInt("Error-enter a positive number.  ");
 		}
 		
+		int first = 0; 
+		int second = 1;
+		int third = 1;
+		int nth1 = n-2;
+		int nth2 = n-1;
+		int nth = nth1 + nth2;
+		
+		System.out.println(first + ";" + second + ";");
+		
+		while (n < 20)
+		{
+			System.out.println(nth + ";" + " ");
+			nth++;
+			
+		}	
+		
+		
+		if (n > 20)
+		{
+			System.out.println(nth);
+		}
+		
+		for (int i = 0; i > 0; i++)
+		{
+			int sum = 
+		}
+		double average = sum%n;
+		
+		System.out.println("Average" + average);
+		
+		while (n > 0)
+		{
+			System.out.println("Average" + average);
 	}
 }
 
