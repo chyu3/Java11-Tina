@@ -1,5 +1,5 @@
 /*
- * PractiseChallenge.java
+ * Programming2.java
  * 
  * Copyright 2020 Tina Chen <ChenTina@10-72-120-211.wifi.8.s.pas.ofs.edu.sg>
  * 
@@ -22,28 +22,16 @@
  */
 
 
-public class PractiseChallenge {
+public class Programming2 {
 	
-	public static void main (String[] args) 
-	{
+	public static void main (String[] args) {
 		System.out.println("Tina");
-		int number = IBIO.inputInt("Enter an integer between 1 and 9: ");
-		if (number<1 || number>9)
+		int n = IBIO.inputInt("Calculate up to term(n)?  ");
+		if (n < 0)
 		{
-			IBIO.output("Error-number out of range"); 
-			IBIO.inputInt("Error-Enter an integer between 1 and 9: ");
+			IBIO.inputInt("Error-enter a positive number.  ");
 		}
 		
-		int sequence = 0;
-		sequence++;
-		
-		do
-		{
-			int answer = number * sequence;
-			System.out.println(number + " " + "X" + " " + sequence + " " + "=" + " " + answer);
-			sequence++;
-		}
-		while (sequence<=20);
 	}
 }
 
