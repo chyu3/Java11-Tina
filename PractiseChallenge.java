@@ -44,6 +44,8 @@ public class PractiseChallenge {
 			sequence++;
 		}
 		while (sequence<=20);
+		
+		
 	}
 }
 
