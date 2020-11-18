@@ -37,15 +37,45 @@ public class PractiseChallenge {
 		int sequence = 0;
 		sequence++;
 		
+        
 		do
 		{
 			int answer = number * sequence;
-			System.out.println(number + " " + "X" + " " + sequence + " " + "=" + " " + answer);
 			sequence++;
+
+			if (sequence<10)
+			{
+				System.out.print(number + " " + "X" + "  " + sequence + " " + "=" + " ");
+			}			
+			else
+			{
+				System.out.print(number + " " + "X" + " " + sequence + " " + "=" + " ");
+			}
+			
+			int c = 0;
+            int k = 1;
+            int t = 0;
+            while (c != 1)
+            {
+                if (answer/k >= 1)
+                {
+                    t++;
+				}
+                else
+                {
+                    c++;
+                }
+                k = k*10;
+            }
+        
+            int space = 4 - t;
+            for ( int j = 1 ; j <= space ; j++)
+            {
+                System.out.print(" ");
+            }
+            System.out.println(answer);
+			
 		}
-		while (sequence<=20);
-		
-		
+		while (sequence<20);
 	}
 }
-
