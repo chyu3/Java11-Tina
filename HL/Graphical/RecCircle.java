@@ -43,12 +43,13 @@ public class RecCircle
 	 */
 	public static void circlers(double radius)	// shrinking circle
 	{
-		if ( radius > 50)
-		return;
+		StdDraw.circle(middleX, middleY, radius);	// circle call: 1 mark
+		StdDraw.pause(500);// slow down the drawing of circles only
+		if ( radius < 1 )			// base case: 1 mark
+			return;
 		else
-		circlere (radius + 1);
-		
-		// your code here
+			circlers( radius - 1 );	// recursive case: 1 mark
+
 	}
 
 	public static void main(String[] args)
@@ -70,16 +71,20 @@ public class RecCircle
 		in.close();
 		*/
 		// Expanding/growing concentric circles (comment/uncomment to test)
-		StdDraw.setPenColor(StdDraw.PINK);
-		circlere( 25 );
+		while(true)
+		{
+			StdDraw.clear();
+			StdDraw.setPenColor(StdDraw.BLUE);
+			circlere( 25 );
 
-		StdDraw.pause(3000);
-		StdDraw.clear();
-		StdDraw.pause(1000);
-		
-		// Shrinking concentric circles (comment/uncomment to test)
-		StdDraw.setPenColor(StdDraw.MAGENTA);
-		circlers( 25 );
+			StdDraw.pause(3000);
+			StdDraw.clear();
+			StdDraw.pause(1000);
+			
+			// Shrinking concentric circles (comment/uncomment to test)
+			StdDraw.setPenColor(StdDraw.MAGENTA);
+			circlers( 25 );
+		}
 
 	}
 	

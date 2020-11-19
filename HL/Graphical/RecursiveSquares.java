@@ -40,10 +40,11 @@ public class RecursiveSquares
         drawSquare(x, y, size);
 
         // recursively draw 4 smaller trees of order n-1
-        draw(n-1, x - size/2, y - size/2, size/ratio);    // lower left  
-        draw(n-1, x - size/2, y + size/2, size/ratio);    // upper left  
-        draw(n-1, x + size/2, y - size/2, size/ratio);    // lower right 
+          
+        draw(n-1, x - size/2, y + size/2, size/ratio);    // upper left   
         draw(n-1, x + size/2, y + size/2, size/ratio);    // upper right
+        draw(n-1, x - size/2, y - size/2, size/ratio);    // lower left
+        draw(n-1, x + size/2, y - size/2, size/ratio);    // lower right
         
         
     }
