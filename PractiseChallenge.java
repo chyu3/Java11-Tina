@@ -35,7 +35,7 @@ public class PractiseChallenge {
 		}
 		
 		int sequence = 0;
-		sequence++;
+		//sequence++;
 		
         
 		do
@@ -74,7 +74,6 @@ public class PractiseChallenge {
                 System.out.print(" ");
             }
             System.out.println(answer);
-			
 		}
 		while (sequence<20);
 	}
