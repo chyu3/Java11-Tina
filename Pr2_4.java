@@ -28,17 +28,17 @@ public class Pr2_4 {
 		for (int i = 1; i <= 10; i++)
 		{
 			int s = i*i*i;
-			if (s < 1000)
+			if (s < 10 )
 			{
-				System.out.println(" " + s);
+				System.out.println("   " + s);
 			}
 			else if (s < 100)
 			{
 				System.out.println("  " + s);
 			}
-			else if (s < 10)
+			else if (s < 1000)
 			{
-				System.out.println("   " + s);
+				System.out.println(" " + s);
 			}			
 		}
 			
