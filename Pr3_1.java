@@ -1,5 +1,5 @@
 /*
- * Pr2_8.java
+ * Pr3_1.java
  * 
  * Copyright 2020 Tina Chen <ChenTina@10-72-120-211.wifi.8.s.pas.ofs.edu.sg>
  * 
@@ -22,24 +22,18 @@
  */
 
 
-public class Pr2_8 {
+public class Pr3_1 {
 	
 	public static void main (String[] args) {
-		for (int i = 1; i <= 10; i++)
+		int x;
+		int num;
+		do
 		{
-			int two = i % 2;
-			int three = i % 3;
-			int five = i % 5;
-			int seven = i % 7;
-			
-			if (two == 1 && three == 1)
-			{
-			    if (five == 1 && seven == 1)
-			    {
-					System.out.println(i);
-				}
-			}
+			x = IBIO.inputInt("Enter an even number between 0~100: ");
+			num = x % 2;
 		}
+		while ((x > 100 && x < 0) || num!=0);
+		System.out.println("Pass");
 	}
 }
 
