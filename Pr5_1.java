@@ -30,8 +30,8 @@ public class Pr5_1 {
 		
 		for (int i = 0; i<100; i++)
 		{
-			sum = sum + term;
 			term = term/5;
+			sum = sum + term;
 		}
 		System.out.println("Total is " + sum);
 	}

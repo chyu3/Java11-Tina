@@ -25,14 +25,16 @@
 public class Pr5_2 {
 	
 	public static void main (String[] args) {
-		double term = 1;
+		double x;
 		double sum = 0;
 		
 		
-		for (int i = 0; i<100; i++)
+		for (int i = 1; i<=100; i++)
 		{
-			sum = sum + term;
-			term = term + 2;
+			x = i*i;
+			sum = sum + (1/x);
+			System.out.println(x + "    " + sum);
+			
 		}
 		System.out.println("Total is " + sum);
 	}
