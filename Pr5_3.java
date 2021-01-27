@@ -25,20 +25,21 @@
 public class Pr5_3 {
 	
 	public static void main (String[] args) {
-		double term = 1;
+		double term = 0;
 		int sign = 1;
 		double sum = 0;
-		int division = 1;
+		double x = 1;
 		
-		for (int i = 1; i < 10000; i++)
+		for (int i = 1; i <= 10000; i++)
 		{
-			System.out.println(sign*term);
-			term = term + 2;
-			sign = sign*-1;
-			division = division + 2;
-			sum = term/division;
+			//System.out.println(sign*term);
+			term = sign/x;
+			sum = sum + term;
+			x = x + 2;
+			sign = sign * -1;
+			
 		}
-		System.out.println(sum);
+		System.out.println("Pi is " + (sum*4));
 	}
 }
 
