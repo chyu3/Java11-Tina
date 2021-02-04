@@ -1,5 +1,5 @@
 /*
- * Pr6_2.java
+ * Pr6_3.java
  * 
  * Copyright 2021 Tina Chen <ChenTina@10-72-120-211.wifi.8.s.pas.ofs.edu.sg>
  * 
@@ -22,28 +22,41 @@
  */
 
 
-public class Pr6_2 {
+public class Pr6_3 {
 	
-	static String stars (int n)
+	public static String spaces(int n)
 	{
-		String x = "";
+		String spaces = "";
 		for (int i = 0; i < n; i++)
-		    x = x + "*";
-		return x;
+		    spaces = spaces + " ";
+		return spaces;
+	}
 	
+	public static String stars(int n)
+	{
+		String stars = "";
+		for (int i = 0; i < n; i++)
+		    stars = stars + "< ";
+		return stars;
 	}
 	
 	public static void main (String[] args) 
 	{
-		int num = IBIO.inputInt("how many lines?: "); 
-		String x = stars(num);
+		int num = IBIO.inputInt("Enter the number of lines: ");
+		String aa = stars(num);
 		
-		for (int i = 1; i <= num; i++)
+		for (int i = num-1; i > 0; i--)
 		{
-			System.out.println( x );
+			System.out.println(spaces(i) + aa);
+		    
 		}
-	}	
-	
-	
+		
+		System.out.println(stars(10));
+		
+		for (int i = 1; i < num; i++)
+		{
+			System.out.println(spaces(i) + aa );
+		}
+	}
 }
 
