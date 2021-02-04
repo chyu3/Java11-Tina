@@ -47,15 +47,28 @@ public class Pr6_3 {
 		
 		for (int i = num-1; i > 0; i--)
 		{
-			System.out.println(spaces(i) + aa);
-		    
+			if( i == 1)
+			{
+				System.out.println(stars(10 + num));
+			}
+			else
+			{
+				System.out.println(spaces(i) + aa);
+		    }
 		}
 		
-		System.out.println(stars(10));
+		//System.out.println(stars(10));
 		
 		for (int i = 1; i < num; i++)
 		{
-			System.out.println(spaces(i) + aa );
+			if(i == 1)
+			{
+				System.out.println(stars(10 + num));
+			}
+			else
+			{
+			    System.out.println(spaces(i) + aa );
+			}
 		}
 	}
 }
