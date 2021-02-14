@@ -24,7 +24,7 @@
 
 public class Pr6_2 {
 	
-	static String stars (int n)
+	static String stars (int n) 
 	{
 		String x = "";
 		for (int i = 0; i < n; i++)
@@ -36,12 +36,10 @@ public class Pr6_2 {
 	public static void main (String[] args) 
 	{
 		int num = IBIO.inputInt("how many lines?: "); 
-		String x = stars(num);
+		//String line = stars(num);
 		
-		for (int i = 1; i <= num; i++)
-		{
-			System.out.println( x );
-		}
+		for (int i = 0; i < num; i++)
+		    System.out.println(stars(i+1));
 	}	
 	
 	
