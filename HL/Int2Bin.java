@@ -24,7 +24,13 @@ public class Int2Bin
 	
 	public static void int2binHL(int n)
 	{
-		// complete this as revision for recursion ^_^
+		if (n<1)
+		{
+			return;
+		}
+		else
+		int2binHL (n-1);
+			// complete this as revision for recursion ^_^
 	}
 	
 	public static void main (String[] args)
