@@ -40,7 +40,7 @@ public class Pr8 {
 				{
 					if ( good(i,j) && good(j,k) && good(i,k) )
 					{
-						System.out.println( i + "      " +  j + "      " + k );
+						System.out.println( i + "      " +  j + "       " + k );
 					}
 				}
 			}
