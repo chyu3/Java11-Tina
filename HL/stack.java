@@ -1,37 +1,63 @@
 /*
- * stack.java
- * 
- * Copyright 2021 Tina Chen <ChenTina@10-72-120-211.wifi.8.s.pas.ofs.edu.sg>
- * 
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
- * MA 02110-1301, USA.
- * 
- * 
+ * Stack ADT - Linked implementation
+ *
  */
-
-
-public class stack {
+ 
+public class Stack
+{
 	Node top;
 	
 	public boolean isEmpty()
 	{
-		return top == null;
+		if(top == null)
+			return true;
+		else
+			return false;
+		// or, in short: return top == null;
 	}
 	
-	public void push (int d)
+	public void push(int d)
 	{
+		Node newNode = new Node();
+		newNode.data = d;
+		if( isEmpty() )
+		{
+			top = newNode;
+		} else {
+			newNode.next = top;
+			top = newNode;
+		}
 	}
+	
+	public int pop()
+	{
+		if( !isEmpty() )
+		{
+			int d = top.data;
+			top = top.next;
+			return d;
+		}
+		return -1;
+	}
+	
+	public int peek()
+	{
+		return top.data;
+	}
+	
+	public void printStack()
+	{
+		Node temp = top;
+		if(temp != null)
+		{
+			System.out.println("Top\n---");
+		}
+		while(temp != null)
+		{
+			System.out.println(temp.data);
+			temp = temp.next;
+		}
+	}
+	
 }
 
