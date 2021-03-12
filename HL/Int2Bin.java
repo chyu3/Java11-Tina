@@ -33,6 +33,9 @@ public class Int2Bin
 			// complete this as revision for recursion ^_^
 	}
 	
+	public static void int2bins (int x)
+	{
+	}
 	public static void main (String[] args)
 	{
 		int x = IBIO.inputInt("Enter a positive integer: ");
@@ -41,6 +44,7 @@ public class Int2Bin
 		System.out.print( x + " is ");
 		int2binHL(x);
 		System.out.println( " in binary (HL algorithm)");
+		
 		/* HL challenge:
 		 * write a method, called int2binS, that uses a stack
 		 * in order to calculate the binary equivalent of an
