@@ -22,8 +22,10 @@ public class Int2Bin
 		return bin;
 	}
 	
-	public static void int2binHL(int n)
+	public static void int2binHL(int H)
 	{
+		int n = H;
+		
 		if (n<1)
 		{
 			return;
@@ -33,9 +35,22 @@ public class Int2Bin
 			// complete this as revision for recursion ^_^
 	}
 	
-	public static void int2bins (int x)
+	public static void int2bins ()
 	{
+		Stack int2bins = new Stack();
+		int input;
+		do
+		{
+			input = IBIO.inputInt("Stacking up: ");
+			if (input > 0)
+			{
+				int2bins.push(input);
+			}
+			int2bins.printStack();
+		}
+		while (input > 0); 
 	}
+	
 	public static void main (String[] args)
 	{
 		int x = IBIO.inputInt("Enter a positive integer: ");
@@ -43,6 +58,7 @@ public class Int2Bin
 		System.out.printf( "%d is %s in binary (SL algorithm)\n", x, int2binSL(x) );
 		System.out.print( x + " is ");
 		int2binHL(x);
+		
 		System.out.println( " in binary (HL algorithm)");
 		
 		/* HL challenge:
