@@ -34,8 +34,10 @@ public class ArrayDemo1 {
 	public static void main (String[] args) {
 		int[] array = {1, 2, 3, 4, 5, 6, 7}; 
 		//2nd option : int[] b = array; //{1, 2, 3, 4, 5, 6, 7};
+		
 		System.out.println(array);
 		//2nd option : System.out.println(b);
+		
 		printarray(array); //call function and prints
 		
 		System.out.println("first element = " + array[0]); //prints frist element
