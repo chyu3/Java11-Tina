@@ -22,20 +22,20 @@ public class Int2Bin
 		return bin;
 	}
 	
-	public static void int2binHL(int H)
+	public static void int2binHL(int n)
 	{
-		int n = H;
 		
-		if (n<1)
+		if (n == 0)
 		{
 			return;
 		}
 		else
-		int2binHL (n-1);
+		int2binHL(n/2);
+		System.out.print(n%2);
 			// complete this as revision for recursion ^_^
 	}
 	
-	public static void int2bins ()
+	public static void int2bins()
 	{
 		Stack int2bins = new Stack();
 		int input;
