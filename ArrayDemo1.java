@@ -23,7 +23,7 @@
 
 
 public class ArrayDemo1 {
-	public static void printarray (int[] a)
+	public static void printarray (int[] a) //create function for form printed
 	{
 		for (int i = 0; i < a.length; i++)
 		{
@@ -33,14 +33,15 @@ public class ArrayDemo1 {
 	
 	public static void main (String[] args) {
 		int[] array = {1, 2, 3, 4, 5, 6, 7}; 
-		int[] b = array; //{1, 2, 3, 4, 5, 6, 7};
+		//2nd option : int[] b = array; //{1, 2, 3, 4, 5, 6, 7};
 		System.out.println(array);
-		System.out.println(b);
-		printarray(array);
+		//2nd option : System.out.println(b);
+		printarray(array); //call function and prints
 		
-		System.out.println(array[0]); //prints frist element
+		System.out.println("first element = " + array[0]); //prints frist element
+		
 		int lastIndex = array.length-1;
-		System.out.println(array[lastIndex]); //prints last element
+		System.out.println("last element = " + array[lastIndex]); //prints last element
 	}
 }
 
