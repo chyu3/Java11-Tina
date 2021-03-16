@@ -80,6 +80,10 @@ public class ArrayChallenge1 {
 		System.out.println("last element is: " + array[lastIndex]); //prints last element
 		
 		//fifth question
+		for (int i = 0; i<array.length; i++)
+		{
+			sum += array[i];
+		}
 		
 	}
 }
