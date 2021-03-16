@@ -62,13 +62,21 @@ public class ArrayChallenge1 {
 	
 	public static void main (String[] args) {
 		int[] array = { 9,8,7,6,5,4,3,2,1 };
-		one(array); //first question
+		System.out.print("1. ");
+		printArray(array); //first question
+		
 		int[] two = copy1(array);
+		System.out.print("2. ");
 		printArray(two); //second question
+		
+		System.out.print("3. ");
 		reverse(two); //third question
 		
 		//fourth question
+		System.out.println("4. ");
 		System.out.println("first element is: " + array[0]); //prints first element
+		
+		int lastIndex = array.length-1;
 		System.out.println("last element is: " + array[lastIndex]); //prints last element
 		
 		//fifth question
