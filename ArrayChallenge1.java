@@ -32,11 +32,11 @@ public class ArrayChallenge1 {
 		}
 	}
 	
-	public static void printArray(int[] array) //prints array across
+	public static void printArray(int[] one) //prints array across
 	{
-		for(int element : array) //traverse/iterate array
+		for(int element : one) //traverse/iterate array
 		{
-			System.out.print( element + " " );
+			System.out.print(element + " " );
 		}
 		System.out.println();
 	}
