@@ -21,7 +21,7 @@
  * 
  */
 
-//use system.out.print when using "public static VOID" function
+//use system.out.print when using "public static INT" function
 
 public class ArrayChallenge2 {
 	
@@ -34,7 +34,7 @@ public class ArrayChallenge2 {
 		System.out.println();
 	}
 	
-	public static int odd (int[] array) 
+	public static int odd (int[] array) //questio 1
 	{
 		int odds = 0;
 		for(int element : array) 
@@ -55,10 +55,32 @@ public class ArrayChallenge2 {
 		return clone;
 	}
 	
+	public static int secondLargest(int[] array) //question 4
+	{
+		int max = array[0];
+		for (int i = 1; i < array.length; i++)
+		{
+			if (array[i] > max)
+			max = array[i];
+		}
+		
+		//find the largest element != largest
+		int secondLargest = array[0];
+		if(array[0] == max)
+		secondLargest = array[1];
+		for (int i = 1; i < array.length; i++)
+		{
+			if(array[i] != max && array[i] > secondLargest)
+			secondLargest = array[i];
+		}
+		return secondLargest;
+	}
+	
 	
 	public static void main (String[] args) {
 		int[] array = {9, 8, 7, 6, 5, 4, 3, 2, 7};
 		System.out.println("The total odd numbers in this array is: " + odd(array)); 
+		System.out.println(secondLargest(array)); 
 		
 	}
 }
