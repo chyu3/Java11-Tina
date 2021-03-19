@@ -45,6 +45,15 @@ public class ArrayChallenge2 {
 		return odds;
 	}
 	
+	public static int[] copy1 (int[] array)
+	{
+		int[] clone = new int[array.length];
+		for(int i = 0; i < array.length; i++) 
+		{
+			clone[i] = array[i];
+		}
+		return clone;
+	}
 	
 	
 	public static void main (String[] args) {
