@@ -45,6 +45,19 @@ public class ArrayChallenge2 {
 		return odds;
 	}
 	
+	public static boolean identical (int[] array1, int[] array2)
+	{
+		if (array1.length != array2.length)
+		return false;
+		
+		for(int i = 0; i < array1.length; i++)
+		{
+			if (array1[i] != array2[i])
+			return false;
+		}
+		return true;
+	}
+	
 	public static int[] copy1 (int[] array)
 	{
 		int[] clone = new int[array.length];
@@ -80,7 +93,7 @@ public class ArrayChallenge2 {
 	public static void main (String[] args) {
 		int[] array = {9, 8, 7, 6, 5, 4, 3, 2, 7};
 		System.out.println("The total odd numbers in this array is: " + odd(array)); 
-		System.out.println(secondLargest(array)); 
+		System.out.println("second largest element is: " + secondLargest(array)); 
 		
 	}
 }
