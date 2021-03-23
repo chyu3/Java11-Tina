@@ -23,8 +23,13 @@ public class PracticalTestQ3
 	// Minimum:
 	public static double min(double[] array)
 	{
-		double minimum = 0.0; // modify
+		double minimum = array[0]; // modify
 		// your code goes here
+		for (int i = 1; i < array.length; i++)
+		{
+			if (array[i] < minimum)
+			minimum = array[i];
+		}
 		return minimum;
 	}
 	//------------------------------------------------------------------
@@ -47,6 +52,26 @@ public class PracticalTestQ3
 	public static double range(double[] array)
 	{
 		double range = 0.0; // modify / your code goes here
+		double maximum = array[0]; // modify
+		// your code goes here
+		for (int i = 1; i < array.length; i++)
+		{
+			if (array[i] > maximum)
+			maximum = array[i];
+		}
+		return maximum;
+		
+		double minimum = array[0]; // modify
+		// your code goes here
+		for (int i = 1; i < array.length; i++)
+		{
+			if (array[i] < minimum)
+			minimum = array[i];
+		}
+		return minimum;
+		
+		(double)range = maximum - minimum;
+		
 		return range;
 	}
 	//------------------------------------------------------------------
@@ -175,7 +200,7 @@ public class PracticalTestQ3
 
 		System.out.println( "\nSingapore Temperature Statistics: " );
 		System.out.println(size(temperature) + " Measurements ");
-		System.out.println( "Minimum   (0.2): " + min(temperature) );
+		System.out.println( "Minimum   (25.4): " + min(temperature) );
 		System.out.println( "Maximum (29.5): " + max(temperature) );
 		System.out.println( "Range   (765.7): " + range(temperature) );
 		System.out.println( "Average(27.62565947242208): " + averaget(temperature, s) );
