@@ -11,6 +11,11 @@ public class PracticalTestQ3
 	{
 		int result = 0; // modify
 		// your code goes here
+		for (int i = 0; array.length > result; i++)
+		{
+			result++;
+		}
+		
 		return result;
 	}
 	//------------------------------------------------------------------
@@ -20,6 +25,7 @@ public class PracticalTestQ3
 	{
 		double minimum = 0.0; // modify
 		// your code goes here
+		
 		return minimum;
 	}
 	//------------------------------------------------------------------
@@ -27,8 +33,13 @@ public class PracticalTestQ3
 	// Maximum:
 	public static double max(double[] array)
 	{
-		double maximum = 0.0; // modify
+		double maximum = array[0]; // modify
 		// your code goes here
+		for (int i = 1; i < array.length; i++)
+		{
+			if (array[i] > maximum)
+			maximum = array[i];
+		}
 		return maximum;
 	}
 	//------------------------------------------------------------------
@@ -42,31 +53,98 @@ public class PracticalTestQ3
 	//------------------------------------------------------------------
 
 	// Average:
-	public static double average(double[] array)
+	public static double average(double[] array, int n)
 	{
 		double average = 0.0; // modify
 		// your code goes here
-		return average;
+		for (int i = 0; i < n; i++)
+		{
+			average += array[i];
+		}
+		return average/n;
+	}
+	
+	public static double averaget(double[] array, int s)
+	{
+		double average = 0.0; // modify
+		// your code goes here
+		for (int i = 0; i < s; i++)
+		{
+			average += array[i];
+		}
+		return average/s;
 	}
 	//------------------------------------------------------------------
 
 	// Mode:
-	public static double mode(double array[])
+	public static double mode(double array[], int n)
 	{
-		double mode = 0.0;
+		double maxValue = 0;
+		int maxCount = 0, i, j;
+		
 		// your code goes here
-		return mode;
+		for (i = 0; i < n; ++i) 
+        {
+            int count = 0;
+            for (j = 0; j < n; ++j) 
+            {
+                if (array[j] == array[i])
+                ++count;
+            }
+
+            if (count > maxCount) 
+            {
+                maxCount = count;
+                maxValue = array[i];
+            }
+        }
+		return maxValue;
+	}
+	
+	public static double modet(double array[], int s)
+	{
+		double maxValue = 0;
+		int maxCount = 0, i, j;
+		
+		// your code goes here
+		for (i = 0; i < s; ++i) 
+        {
+            int count = 0;
+            for (j = 0; j < s; ++j) 
+            {
+                if (array[j] == array[i])
+                ++count;
+            }
+
+            if (count > maxCount) 
+            {
+                maxCount = count;
+                maxValue = array[i];
+            }
+        }
+		return maxValue;
 	}
 	//------------------------------------------------------------------
 
 	// For the median to work, the array double[] MUST BE SORTED
-	public static double median(double[] array)
+	public static double median(double[] array, int n)
 	{
 		Arrays.sort(array); // DO NOT REMOVE THIS LINE, it sorts the array
-		double median = 0.0;
 		//your code goes here
-		return median;
+		if (n % 2 != 0) //check if array has even number of elements
+		return (double) array [n / 2];
+		return (double) (array [ (n-1) / 2 ] + array[n/2] ) / 2.0;
 	}
+	
+	public static double mediant(double[] array, int s)
+	{
+		Arrays.sort(array); // DO NOT REMOVE THIS LINE, it sorts the array
+		//your code goes here
+		if (s % 2 != 0) //check if array has even number of elements
+		return (double) array [s / 2];
+		return (double) (array [ (s-1) / 2 ] + array[s/2] ) / 2.0;
+	}
+
 
 	public static double formatDouble(double x, int decimals)
 	{	
@@ -82,18 +160,28 @@ public class PracticalTestQ3
 		System.out.println("\n*** Statistical Analysis of Data Sets ***\n");
 
 		double rainfall[]    = load("rainfall.txt");	// load data from files
+		int n = rainfall.length;
+		
 		double temperature[] = load("temperature.txt"); // into arrays
-
-		System.out.println( "\nSingapore Rainfall Statistics" );
-		System.out.println( "Measurements   : " + size(rainfall) );
+		int s = temperature.length;
+		
+		System.out.println( "\nSingapore Rainfall Statistics: " );
+		System.out.println(size(rainfall) + " Measurements " );
 		System.out.println( "Minimum   (0.2): " + min(rainfall) );
 		System.out.println( "Maximum (765.9): " + max(rainfall) );
 		System.out.println( "Range   (765.7): " + range(rainfall) );
-		System.out.println( "Average(178.89): " + average(rainfall) );
-		System.out.println( "Mode    (127.2): " + mode(rainfall) );
-		System.out.println( "Median  (159.7): " + median(rainfall) );
+		System.out.println( "Average(178.89): " + average(rainfall, n) );
+		System.out.println( "Mode    (127.2): " + mode(rainfall, n) );
+		System.out.println( "Median  (159.7): " + median(rainfall,n) );
 
-		System.out.println( "\nSingapore Temperature Statistics" );
+		System.out.println( "\nSingapore Temperature Statistics: " );
+		System.out.println(size(temperature) + " Measurements ");
+		System.out.println( "Minimum   (0.2): " + min(temperature) );
+		System.out.println( "Maximum (765.9): " + max(temperature) );
+		System.out.println( "Range   (765.7): " + range(temperature) );
+		System.out.println( "Average(178.89): " + averaget(temperature, s) );
+		System.out.println( "Mode    (127.2): " + modet(temperature, s) );
+		System.out.println( "Median  (159.7): " + mediant(temperature, s) );
 		
 		// write the appropriate code to process the temperature array here
 
