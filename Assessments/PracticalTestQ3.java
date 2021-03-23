@@ -25,7 +25,6 @@ public class PracticalTestQ3
 	{
 		double minimum = 0.0; // modify
 		// your code goes here
-		
 		return minimum;
 	}
 	//------------------------------------------------------------------
@@ -177,11 +176,11 @@ public class PracticalTestQ3
 		System.out.println( "\nSingapore Temperature Statistics: " );
 		System.out.println(size(temperature) + " Measurements ");
 		System.out.println( "Minimum   (0.2): " + min(temperature) );
-		System.out.println( "Maximum (765.9): " + max(temperature) );
+		System.out.println( "Maximum (29.5): " + max(temperature) );
 		System.out.println( "Range   (765.7): " + range(temperature) );
-		System.out.println( "Average(178.89): " + averaget(temperature, s) );
-		System.out.println( "Mode    (127.2): " + modet(temperature, s) );
-		System.out.println( "Median  (159.7): " + mediant(temperature, s) );
+		System.out.println( "Average(27.62565947242208): " + averaget(temperature, s) );
+		System.out.println( "Mode    (27.3): " + modet(temperature, s) );
+		System.out.println( "Median  (27.7): " + mediant(temperature, s) );
 		
 		// write the appropriate code to process the temperature array here
 
