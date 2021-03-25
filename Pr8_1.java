@@ -32,7 +32,7 @@ public class Pr8_1 {
 			{
 				for (int k = j; k < 100; k++)
 				{
-					System.out.println(i + "" + "" + j + "" + k);
+					System.out.println(i + "" + j + "" + k);
 				}
 			}
 		}
