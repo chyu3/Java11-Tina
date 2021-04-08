@@ -1,5 +1,5 @@
 /*
- * Pr8_1.java
+ * Pr8_3.java
  * 
  * Copyright 2021 Tina Chen <ChenTina@10-72-120-211.wifi.8.s.pas.ofs.edu.sg>
  * 
@@ -22,7 +22,7 @@
  */
 
 
-public class Pr8_1 {
+public class Pr8_3 {
 	
 	public static void main (String[] args) 
 	{
@@ -33,7 +33,7 @@ public class Pr8_1 {
 				for (int k = j; k < 100; k++)
 				{
 					if (good(i, j) && good(j, k) && good(i, k))
-					IBIO.output(i + " " + j + " " + k);
+					System.out.println(i + " " + j + " " + k);
 				}
 			}
 		}

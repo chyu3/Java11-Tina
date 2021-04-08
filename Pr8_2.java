@@ -32,10 +32,18 @@ public class Pr8_2 {
 			{
 				for (int k = j; k < 200; k++)
 				{
-					System.out.println(i + "" + j + "" + k);
+					if (good(i, j) && good(j, k) && good(i, k))
+					System.out.println(i + " " + j + " " + k);
 				}
 			}
 		}
+	}
+	
+	static boolean good (int a, int b)
+	{
+		int x = a * b + 1;
+		int y = (int) (Math.sqrt(x) + .5);
+		return (y * y == x);
 	}
 }
 
