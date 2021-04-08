@@ -11,6 +11,7 @@ public class PracticalTestQ3
 	{
 		int result = 0; // modify
 		// your code goes here
+		
 		for (int i = 0; array.length > result; i++)
 		{
 			result++;
@@ -18,6 +19,11 @@ public class PracticalTestQ3
 		
 		return result;
 	}
+	    /*or
+		 * int result = array.length;
+		 * return result;
+		 */
+	
 	//------------------------------------------------------------------
 
 	// Minimum:
@@ -32,6 +38,17 @@ public class PracticalTestQ3
 		}
 		return minimum;
 	}
+	
+	/* or
+	 * double minimum = array[0];
+	 * for (double x : array)
+	 * {
+	 * 		if(x < minimum)
+	 * 		minimum = x;
+	 * }
+	 * return minimum;
+	 */
+	
 	//------------------------------------------------------------------
 
 	// Maximum:
@@ -46,31 +63,23 @@ public class PracticalTestQ3
 		}
 		return maximum;
 	}
+	/* or
+	 * for (double x : array)
+	 * {
+	 * 		if(x > maximum)
+	 * 		maximum = x;
+	 * }
+	 * return maximum;
+	 */
+	
 	//------------------------------------------------------------------
 
 	// Range
 	public static double range(double[] array)
 	{
-		double range = 0.0; // modify / your code goes here
-		double maximum = array[0]; // modify
 		// your code goes here
-		for (int i = 1; i < array.length; i++)
-		{
-			if (array[i] > maximum)
-			maximum = array[i];
-		}
-		return maximum;
 		
-		double minimum = array[0]; // modify
-		// your code goes here
-		for (int i = 1; i < array.length; i++)
-		{
-			if (array[i] < minimum)
-			minimum = array[i];
-		}
-		return minimum;
-		
-		(double)range = maximum - minimum;
+		double range = maximum(array) - minimum(array);
 		
 		return range;
 	}
