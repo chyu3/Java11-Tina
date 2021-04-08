@@ -26,6 +26,7 @@ public class Pr8_1 {
 	
 	public static void main (String[] args) 
 	{
+		int counter = 0;
 		for (int i = 1; i < 100; i++)
 		{
 			for (int j = i; j < 100; j++)
@@ -34,6 +35,7 @@ public class Pr8_1 {
 				{
 					if (good(i, j) && good(j, k) && good(i, k))
 					IBIO.output(i + " " + j + " " + k);
+					counter++;
 				}
 			}
 		}
