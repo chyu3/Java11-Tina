@@ -26,11 +26,11 @@ public class Pr8_3 {
 	
 	public static void main (String[] args) 
 	{
-		for (int i = 1; i < 100; i++)
+		for (int i = 1; i < 200; i++)
 		{
-			for (int j = i; j < 100; j++)
+			for (int j = i; j < 200; j++)
 			{
-				for (int k = j; k < 100; k++)
+				for (int k = j; k < 200; k++)
 				{
 					if (good(i, j) && good(j, k) && good(i, k))
 					System.out.println(i + " " + j + " " + k);
