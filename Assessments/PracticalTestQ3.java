@@ -78,8 +78,7 @@ public class PracticalTestQ3
 	public static double range(double[] array)
 	{
 		// your code goes here
-		
-		double range = maximum(array) - minimum(array);
+		double range = max(array) - min(array);
 		
 		return range;
 	}
