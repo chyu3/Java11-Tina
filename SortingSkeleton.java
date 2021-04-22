@@ -33,11 +33,37 @@ public class SortingSkeleton
 	static void bubble(int[] a)
 	{
 		// your code goes here - sort the array a using bubble sort
+		int n = a.length;
+		int temp = 0;
+		for (int i = 0; i < n; i++)
+		{
+			for (int j = 1; j < (n-i); j++);
+			{
+				if (a[j-1] > a[j])
+				{
+					temp = a[j-1];
+					a[j-1] = a[j];
+					a[j] = temp;
+				}
+			}
+		}
 	}
 
 	public static void selection(int[] a)
 	{
 		// your code goes here - sort the array a using selection sort
+		for (int i = 0; i < a.length; i++)
+		{
+			int index = i;
+			
+			for (int j = i + 1; j < a.length; j++)
+			{
+				if (a[j] < a[index])
+				{
+					index = j; //searches for lowest index
+				}
+			}
+		}
 	}
 
 	// a couple of ways to visualise the insertion sort:
@@ -68,7 +94,7 @@ public class SortingSkeleton
 
 		System.out.println("\nInsertion sort");
 		array = clone(original);
-		simpleInsertion( array );
+		insertion( array );
 		printArray(array);
 
 	}
