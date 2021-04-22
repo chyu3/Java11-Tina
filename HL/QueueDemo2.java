@@ -16,7 +16,29 @@ public class QueueDemo2
 		Queue q = new Queue();
 		// copy the array 'intArray' into the queue 'q'
 		// display the resulting queue
+		for (int i = 0; i < intArray.length; i++)
+		{
+			q.enQueue(intArray[i]);
+		}
+		q.printQueue();
 		
+		int queueLength = 0;
+		Node temp = q.head;
+		while (temp != null)
+		{
+			queueLength++;
+			temp = temp.next;
+		}
+		
+		int[] newArray = new int[queueLength];
+		int i = 0;
+		while(q.isEmpty() == false)
+		{	newArray[i] = q.deQueue();
+			i++;
+		}
+		
+		q.printQueue();
+		printArray(intArray);
 	}
 }
 
