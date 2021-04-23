@@ -72,6 +72,18 @@ public class SortingSkeleton
 	public static void insertion(int[] a)
 	{
 		// your code goes here - for the alternative insertion sort
+		int n = a.length;
+		for (int j = 1; j < n; j++)
+		{
+			int key = a[j];
+			int i = j - 1;
+			while ((i > -1) && (a[i] > key))
+			{
+				a [i=1] = a[i];
+				i--;
+			}
+			a[i + 1] = key;
+		}
 	}
 
 	// No need to modify the main method.
