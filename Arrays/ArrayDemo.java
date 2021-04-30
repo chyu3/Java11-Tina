@@ -10,6 +10,15 @@ public class ArrayDemo
 		System.out.println();
 	}
 	
+	public static void printArray(String[] a)
+	{
+		for(int i = 0; i < a.length; i++)
+		{
+			System.out.println( i + " : " + a[i] );
+		}
+		System.out.println();
+	}	
+	
 	public static void printArrayReverse(int[] a)
 	{
 		for(int i = a.length-1; i >= 0; i--)
@@ -24,28 +33,23 @@ public class ArrayDemo
 		int[] a = { 1,3,5,7,9,11 };
 		int[] b = a; //{ 1,2,3,4,5,6,7 };
 		int[] c = new int[a.length];
-		
-		//code given as output
 		System.out.println(a);
 		System.out.println(b);
-		
 		printArray(a);
 		System.out.println(a[0]); // first element
-		
 		int lastIndex = a.length-1;
 		System.out.println(a[lastIndex]); // last element
-		
-		printArrayReverse( a ); //reverse elements of array a 
-		
-		b[b.length-1] = 13; //sets last element to 13
+		printArrayReverse( a );
+		b[b.length-1] = 13;
 		System.out.println("\nArray b's last element set to 13");
-		
-		
-		System.out.println("\nPrinting arrays array and b");
+		System.out.println("\nPrinting arrays a and b");
 		printArray( a );
 		printArray( b );
 		printArray( c );
 		
+		String[] s = {"A","B","C"};
+		ArrayDemo2.main(s);
+		//System.out.println(ArrayDemo2.SIZE);
 	}
 }
 
