@@ -33,7 +33,7 @@ public class Q4Test
 		return lastIndex == a.length;
 	}
 	
-	public static void bubbleSort(String[] a)
+	public static void bubbleSort(String[] a) //compare and change two at a time 
 	{
 		String temp = "";
 		for (int j = 0; j < a.length; j++) 
@@ -152,7 +152,7 @@ public class Q4Test
 	
 	public static void insert(String[] a, String element)
 	{
-		
+		 
 	}
 	
 	public static void main (String[] args)
@@ -162,34 +162,44 @@ public class Q4Test
 		String[] descending = clone(original);
 		selectionSort(ascending);
 		bubbleSort(descending);
+		
 		printArray(original);
 		printArray(ascending);
 		printArray(descending);
+		
 		lastIndex = original.length;
 		System.out.println();
+		
 		System.out.println("Looking for Lester [-1]: " + search(ascending, "Lester"));
 		System.out.println("Looking for anne   [-1]: " + search(ascending, "anne"));
 		System.out.println("Looking for Anne   [2] : " + search(ascending, "Anne"));
+		
 		System.out.println("\noriginal array sorted [0]: " + isSorted(original));
 		System.out.println("ascending array sorted [1]: " + isSorted(ascending));
 		System.out.println("descending array sorted [-1]: " + isSorted(descending));
+		
 		System.out.println("\nRemoving first element from descending array");
 		lastIndex = descending.length;
 		remove(descending, 0);
 		printArray(descending);
 		lastIndex = ascending.length;
+		
 		System.out.println("\nRemoving Chuck [4] element from ascending array");
 		remove(ascending, 4);
+		
 		System.out.println("\nRemoving duplicates from the ascending array");
 		removeDuplicates(ascending);
 		printArray(ascending);
+		
 		System.out.println("\nRemoving duplicates from the original array? ");
 		removeDuplicates(original);
 		System.out.println();
+		
 		System.out.println("Inserting Ivo into descending");
 		insert(descending, "Ivo");
 		System.out.println("Inserting Ives into ascending");
 		insert(ascending, "Ives");
+		
 		System.out.println("\nInserting James into ascending");
 		insert(ascending, "James");
 		printArray(ascending);
