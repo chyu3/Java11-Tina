@@ -11,6 +11,25 @@ public class Markbook
 	{	// score is a % from 0 - 100 inclusive
 		String grade = "";
 		// your code goes here
+		if (score >= 85 && score <= 100)
+		{
+			grade = "A";
+		}
+		else if (score >= 75 && score <= 84)
+		{
+			grade = "B";
+		}
+		else if (score >= 65 && score <= 74)
+		{
+			grade = "C";
+		}
+		else if (score >= 50 && score <= 64)
+		{
+			grade = "D";
+		}
+		else 
+		grade = "F";
+		
 		return grade;
 	}
 
@@ -21,7 +40,7 @@ public class Markbook
 		// and put result into a 3rd parallel array (averages)
         String[] averages = new String[scores.length];
 		// your code goes here
-        return output;
+        return averages;
 	}
 
 
@@ -42,7 +61,7 @@ public class Markbook
 		for(int s = 0; s < classSize; s++)
 		{
 			int tests = scores[s].length; // number of tests/scores per student
-			System.out.print( names[s] + tab + tab );
+			System.out.print( studentNames[s] + tab + tab );
 			for(int t = 0; t < tests; t++)
 			{
 				System.out.print( scores[s][t] + tab );
