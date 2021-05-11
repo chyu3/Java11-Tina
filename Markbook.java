@@ -27,7 +27,7 @@ public class Markbook
 		{
 			grade = "D";
 		}
-		else 
+		else if (score < 50)
 		grade = "F";
 		
 		return grade;
@@ -40,16 +40,36 @@ public class Markbook
 		// and put result into a 3rd parallel array (averages)
         String[] averages = new String[scores.length];
 		// your code goes here
-        return averages;
+		
+		for (int i = 0; i < scores.length; i++) //length of rows
+		{
+			double sum = 0;
+			for (int j = 0; j < scores[i].length; j++) //length of columns
+			{
+				sum += scores[i][j];
+			}
+			averages[i] = scoreToGrade(sum/scores[i].length);
+		}
+        return (averages);
 	}
 
 
 	public static double classAverage(int[][] scores)
 	{	// calculate the class average based on the 2D array with students scores
-        double sum = 0;		// to add the scores of each student
-		double average = 0; // to store the result
+        //double sum = 0;		// to add the scores of each student
+		double classSum = 0; // to store the result
         // your code goes here
-        return average;
+        for (int i = 0; i < scores.length; i++) //length of rows
+		{
+			double sum = 0;
+			for (int j = 0; j < scores[i].length; j++) //length of columns
+			{
+				sum += scores[i][j];
+			}
+			double studenAverage = sum/scores[i].length;
+			classSum = classSum + studenAverage;
+		}
+        return classSum/scores.length;
 	}
 
 
