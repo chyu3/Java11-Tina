@@ -47,18 +47,46 @@ public class TicTacToeC {
         }
 	}
 		
-	public static void checkRows(char[][] b, char player)
+	public static void checkRows(char[][] a, char player)
 	{
-		
+		for(int r = 0; r < a.length; r++)
+		{
+			for(int c = 0; c < a[r].length; c++)
+			{
+				if(a[r][c] != player)
+					return false; //player didnt win
+			}
+		}
+		return true; //other wise player wins a row
 	}
 	
 	
-	//public static void CheckCols()
+	public static void CheckCols(char[][] a, char player)
+	{
+		for(int c = 0; c < a.length; c++)
+		{
+			for(int r = 0; r < a[c].length; r++)
+			{
+				if(a[r][c] != player)
+					return false; //player didnt win
+			}
+		}
+		return true; //other wise player wins a column
+	}
 	
-	//public static void checkD1(
+	public static void checkD1(char[][] a, char player)
+	{
+		for(int r = 0; r
+		
+		if([a][n-1-b])
+	}
 	
-	//public static void checkD2(
-	
+	public static void checkD2(char[][] a, char player)
+	{
+		for(int 
+		if([a][i])
+		
+	}
 	
 	public static void cleanBoard(char[][] a)
 	{
@@ -71,12 +99,27 @@ public class TicTacToeC {
 		}
 	}
 			
+	public static boolean FullBoard(char[][] a)
+	{
+		for(int r = 0; r < a.length; r++)
+		{
+			for(int c = 0; c < a[r].length; c++)
+			{
+				if(a[r][c] == '-')
+					return false; //board not full, continues
+				
+			}
+		}
+		return true;
+	}
 	
 	public static void main (String[] args) {
 		int n = IBIO.inputInt("Enter an integer for no. of columns/rows: ");
 		char[][] board = new char [n][n];
 		cleanBoard(board);
 		printBoard(board);
+		
+		
 		
 		
 		

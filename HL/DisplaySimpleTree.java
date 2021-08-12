@@ -13,6 +13,11 @@ import java.awt.*;
 import java.io.*;
 import java.util.*;
 
+//binary tree: two children for one node
+//binary search tree: made of sub trees (efficient search)
+//traversing the tree: moving through the nodes
+//visiting: processing the node
+
 public class DisplaySimpleTree extends JFrame {
   JScrollPane scrollpane;
   DisplayPanel panel;
