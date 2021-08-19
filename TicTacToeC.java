@@ -20,7 +20,12 @@
  * 
  * 
  */
-
+ 
+/*    0   1   2
+ *0 | - | - | - |
+ *1 | - | - | - |
+ *2 | - | - | - |
+ */
 
 public class TicTacToeC {
 	
@@ -47,7 +52,7 @@ public class TicTacToeC {
         }
 	}
 		
-	public static void checkRows(char[][] a, char player)
+	public static boolean checkRows(char[][] a, char player)
 	{
 		for(int r = 0; r < a.length; r++)
 		{
@@ -61,7 +66,7 @@ public class TicTacToeC {
 	}
 	
 	
-	public static void CheckCols(char[][] a, char player)
+	public static boolean checkCols(char[][] a, char player)
 	{
 		for(int c = 0; c < a.length; c++)
 		{
@@ -74,18 +79,24 @@ public class TicTacToeC {
 		return true; //other wise player wins a column
 	}
 	
-	public static void checkD1(char[][] a, char player)
+	public static boolean checkD1(char[][] a, char player) //increasing diagonal
 	{
-		for(int r = 0; r
-		
-		if([a][n-1-b])
+		for(int i = 0; i < a.length; i++)
+		{
+			if(a[i][a.length-1-i] != player)  //02, 11, 20
+				return false;
+		}
+		return true;
 	}
 	
-	public static void checkD2(char[][] a, char player)
+	public static boolean checkD2(char[][] a, char player) //decreasing diagonal
 	{
-		for(int 
-		if([a][i])
-		
+		for(int i = 0; i < a.length; i++)  //00, 11, 22
+		{
+			if(a[i][i] != player)
+				return false;
+		}
+		return true;
 	}
 	
 	public static void cleanBoard(char[][] a)
@@ -113,16 +124,64 @@ public class TicTacToeC {
 		return true;
 	}
 	
+	/*public static void printRow(char[][] board, int x)
+	{
+		for(int i = 0; i < board[x].length; i++)
+		{
+			System.out.println(board[x][i] + " " );
+		}
+	}
+	
+	//public static void printColumn(char[][] board, int y)
+	{
+		for(int i = 0; i < board.length; i++)
+		{
+			System.out.println(board[i][y] + " " );
+		}
+	}
+	*/
+	
 	public static void main (String[] args) {
-		int n = IBIO.inputInt("Enter an integer for no. of columns/rows: ");
+		int n = IBIO.inputInt("Enter an integer for number of columns/rows: ");
 		char[][] board = new char [n][n];
+		boolean winner = false;
+		
 		cleanBoard(board);
-		printBoard(board);
+		do{
+			printBoard(board);
+			winner = false;
+			if(FullBoard(board) == false)
+			{
+				char L = IBIO.inputChar("Enter o or x: ");
+				int row = IBIO.inputInt("Enter  coordinates for row: ") -1;
+				while(row < 0 || row > n-1)
+				{
+					row = IBIO.inputInt("Error") -1;
+				}
+				int column = IBIO.inputInt("Enter  coordinates for column: ") -1;
+				while(column < 0 || column > n-1)
+				{
+					column = IBIO.inputInt("Error") -1;
+				}
+				
+				board[row][column] = L;
+				
+				if(checkRows(board, L) || checkCols(board, L) || checkD1(board, L) || checkD2(board, L))
+				{
+					System.out.println ( L + "... Wins!");
+					winner = true;  //only when any one check is true
+					break;
+				}
+
+			}
+		} while(FullBoard(board) == false);
 		
+		if (winner == false)  //
+		{
+			System.out.println("Tie!");
+		}
 		
-		
-		
-		
+		System.out.println("GameOver!");
 	}
 }
 

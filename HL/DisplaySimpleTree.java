@@ -13,8 +13,14 @@ import java.awt.*;
 import java.io.*;
 import java.util.*;
 
-//binary tree: two children for one node
-//binary search tree: made of sub trees (efficient search)
+//binary tree: two children max under one node
+/*binary search tree: input becomes the root (efficient search)
+ * either left or right
+ * parent points to children
+ * cannot go back to parent
+ * (made of many binary search trees)
+ */
+
 //traversing the tree: moving through the nodes
 //visiting: processing the node
 
