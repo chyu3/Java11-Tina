@@ -1,4 +1,4 @@
-* MockTestPower to the 'x' to the power of 'y'
+package Assessments;/* MockTestPower to the 'x' to the power of 'y'
 */
 
 public class MyMockTestPower {
@@ -33,15 +33,15 @@ public class MyMockTestPower {
 					int denominatorLength = denominator.length(); //how many character in the denominator of fraction
 					
 					IBIO.output("\n"); //go to next-next line
-					for(int i = 1; <= denominatorLength/2; i++) //put spaces...
-					{ 
+					for(int i = 1; i <= denominatorLength/2; i++) //put spaces...
+					{
 						IBIO.out(" "); // ...before the 1
 					}
 					
 					IBIO.output("1");
-					for(int i = 1; <= denominatorLength; i++) //put line...
+					for(int i = 1; i <= denominatorLength; i++) //put line...
 					{
-						IBIO.out("-"; //...under the "1"
+						IBIO.out("-"); //...under the "1"
 					}
 					IBIO.output(" = "); //add the "=" and go to next line
 					IBIO.output(denominator);
@@ -66,7 +66,8 @@ public class MyMockTestPower {
 					IBIO.output(power);
 
 				}		// end if --> exponent is negative.
-				else	// this could also be: if(exponent >= 0)
+
+				if (exponent >= 0)// this could also be: if(exponent >= 0)
 				{
 					for(int i = 0; i < exponent; i++)
 					{	power = power * base;

@@ -7,7 +7,7 @@
   	for(int i = n; i > 0; i=i/10)
   	     {digits++;
   	     }
-  	     system.out.printf("%,d has %d digits." n, digits);
+  	     system.out.printf("%,d has %d digits." + n, digits);
   	 }
   	
 }

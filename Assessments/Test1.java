@@ -66,12 +66,12 @@ public class Test1
 				IBIO.output("Enter a number less than 10: 11");
 				IBIO.output(">>>Error-invalid input");
 			}
-			else if (number 1 >  && number <= 10)
+			else if (number >= 1 && number <= 10)
 			{
 				IBIO.output("Enter a positive number less than 10: 0");
 				IBIO.output(">>>Error-invalid input");
 			}
-		}
+		}while ();
 		
 		System.exit(0);
 	}
