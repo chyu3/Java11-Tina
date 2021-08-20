@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7a5fdf54-c42c-409f-81e9-d48f0543a701" name="Changes" comment="saved">
-      <change beforePath="$PROJECT_DIR$/Assessments/MyMockTestPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assessments/MyMockTestPower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assessments/Test1.java" beforeDir="false" afterPath="$PROJECT_DIR$/Assessments/Test1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Numbers.java" beforeDir="false" afterPath="$PROJECT_DIR$/Numbers.java" afterDir="false" />
-    </list>
+    <list default="true" id="7a5fdf54-c42c-409f-81e9-d48f0543a701" name="Changes" comment="saved" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
