@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a5fdf54-c42c-409f-81e9-d48f0543a701" name="Changes" comment="saved">
-      <change beforePath="$PROJECT_DIR$/Assessments/Test1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +22,21 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.TicTacToeC">
+    <configuration name="DisplaySimpleTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DisplaySimpleTree" />
+      <module name="Java11-Tina" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Formative" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Formative" />
+      <module name="Java11-Tina" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TicTacToeC" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="TicTacToeC" />
       <module name="Java11-Tina" />
@@ -33,6 +47,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.TicTacToeC" />
+        <item itemvalue="Application.Formative" />
+        <item itemvalue="Application.DisplaySimpleTree" />
       </list>
     </recent_temporary>
   </component>
