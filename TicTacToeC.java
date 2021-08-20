@@ -59,10 +59,10 @@ public class TicTacToeC {
 			for(int c = 0; c < a[r].length; c++)
 			{
 				if(a[r][c] != player)
-					return false; //player didnt win
+					return false; //player didn't win
 			}
 		}
-		return true; //other wise player wins a row
+		return true; //other-wise player wins a row
 	}
 	
 	
@@ -73,10 +73,10 @@ public class TicTacToeC {
 			for(int r = 0; r < a[c].length; r++)
 			{
 				if(a[r][c] != player)
-					return false; //player didnt win
+					return false; //player didn't win
 			}
 		}
-		return true; //other wise player wins a column
+		return true; //other-wise player wins a column
 	}
 	
 	public static boolean checkD1(char[][] a, char player) //increasing diagonal
@@ -124,7 +124,7 @@ public class TicTacToeC {
 		return true;
 	}
 	
-	/*public static void printRow(char[][] board, int x)
+	/* public static void printRow(char[][] board, int x)
 	{
 		for(int i = 0; i < board[x].length; i++)
 		{
@@ -169,7 +169,7 @@ public class TicTacToeC {
 				if(checkRows(board, L) || checkCols(board, L) || checkD1(board, L) || checkD2(board, L))
 				{
 					System.out.println ( L + "... Wins!");
-					winner = true;  //only when any one check is true
+					winner = true;  //only when anyone check is true
 					break;
 				}
 
