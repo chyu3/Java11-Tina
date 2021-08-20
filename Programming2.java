@@ -56,15 +56,15 @@ public class Programming2 {
 		
 		for (int i = 0; i > 0; i++)
 		{
-			int sum = 
+			int sum = i+i;
 		}
 		double average = sum%n;
 		
 		System.out.println("Average" + average);
 		
-		while (n > 0)
-		{
+		while (n > 0) {
 			System.out.println("Average" + average);
+		}
 	}
 }
 
