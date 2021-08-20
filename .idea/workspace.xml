@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7a5fdf54-c42c-409f-81e9-d48f0543a701" name="Changes" comment="saved" />
+    <list default="true" id="7a5fdf54-c42c-409f-81e9-d48f0543a701" name="Changes" comment="saved">
+      <change beforePath="$PROJECT_DIR$/TicTacToeC.java" beforeDir="false" afterPath="$PROJECT_DIR$/TicTacToeC.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
